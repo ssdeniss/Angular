@@ -1,0 +1,9 @@
+<div class='bg-black/50 fixed top-0 left-0 w-full h-full' (click)='modalService.close()'></div>
+<div class='w-[500px] absolute  p-6 bg-white rounded'
+     style='left: 50%; top: 50%; transform: translate(-50%, -50%)'>
+  <button (click)='modalService.close()' class='absolute top-3 right-5 text-black scale-150'>&times;</button>
+
+  <h1 class='text-center mb-2 text-lg'>{{title | titlecase}}</h1>
+
+  <ng-content></ng-content>
+</div>
