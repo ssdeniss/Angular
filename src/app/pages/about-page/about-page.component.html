@@ -1,1 +1,26 @@
-<p>about-page works!</p>
+<div class='product__info'>
+  <div class='container'>
+    <div class='product__info-about'>
+      <img [alt]='product.product?.title' [src]='product.product?.image' class='product__info-image'>
+      <div>
+        <h3 class='product__info-title'>{{product.product?.title}}</h3>
+        <div class='product__info-description'>{{product.product?.description }}</div>
+        <div class='product__info-price'>
+          <div>{{product.product?.price | currency }}</div>
+          <div>
+            <i class='pi pi-star' style='font-size: 1rem'></i>
+            {{product.product?.rating?.rate}}</div>
+        </div>
+        <div class='product__info-buy'>
+          <app-counter [(counterValue)]='productCount' />
+          <p-button (click)='addProductToCart(product.product?.id)'>+ Add to Cart</p-button>
+        </div>
+      </div>
+    </div>
+    <h1 class='product__carousel-title'>More products</h1>
+    <app-carousel />
+  </div>
+</div>
+
+
+<p *ngIf='loading' class='text-center text-lg'>Loading...</p>

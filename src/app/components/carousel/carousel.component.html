@@ -1,0 +1,6 @@
+<p-carousel [circular]='true' [numScroll]='1' [numVisible]='3' [value]='productsService.products'
+            class='carousel__slider'>
+  <ng-template let-product pTemplate='item'>
+    <img [src]='product.image' alt='' class='carousel__image'>
+  </ng-template>
+</p-carousel>

@@ -1,13 +1,9 @@
-<div class='py-4 px-6 border rounded flex items-center flex-col mb-2'>
-  <h2 class='mb-2 text-md text-center'>{{ product.title }}</h2>
-  <img class='w-1/6 mb-2' [src]='product.image' [alt]='product.title' />
-  <p>Price: {{ product.price | currency: 'EUR' }}</p>
-  <button class='border py-2 px-4 rounded bg-amber-400' [ngClass]="{'bg-amber-400': details, 'bg-blue-400': !details}"
-          (click)='details = !details'
-  >{{details ? 'Hide' : 'Show'}} details
-  </button>
-  <div *ngIf='details'>
-    <p>{{product.description}}</p>
-    <p>Rate: {{product.rating.rate | number: '1.2-4'}}</p>
-  </div>
+<div class='product__content'>
+  <h2 class='product__content-title'>{{ product.title }}</h2>
+  <img [alt]='product.title' [src]='product.image' class='product__image mb-2' />
+  <div class='product__content-description'>
+    <p>Price: {{ product.price | currency: 'EUR' }}</p>
+    <p>Rate: {{product.rating.rate | number: '1.2-4'}}</p></div>
+  <p-button (click)='navigateTo(product.id)' class='product__content-btn' label='Buy product'></p-button>
 </div>
+

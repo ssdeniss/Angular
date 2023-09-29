@@ -1,0 +1,14 @@
+<div class='cart'>
+  <div class='container'>
+    <div class='cart__content'>
+      <div class='cart__products-list'>
+
+        <div *ngFor='let product of cartProducts$ | async'>
+          <!-- Display individual product details -->
+          <div>{{ product.productId }} - {{ product.productNumber }}</div>
+        </div>
+      </div>
+      <div class='cart__price'></div>
+    </div>
+  </div>
+</div>

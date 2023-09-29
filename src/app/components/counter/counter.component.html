@@ -1,0 +1,5 @@
+<div class='counter'>
+  <p-button (click)='decreaseCounter()' [disabled]='counterValue === 1' class='counter__btn minus'>-</p-button>
+  <div class='counter__value'>{{counterValue}}</div>
+  <p-button (click)='increaseCounter()' [disabled]='counterValue === 10' class='counter__btn plus'>+</p-button>
+</div>
